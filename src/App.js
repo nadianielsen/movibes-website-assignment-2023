@@ -5,7 +5,7 @@ function App() {
   return (
   <>
   <Header />
-  <main>
+  <main className="bg-teal-400">
     <Outlet />
   </main>
   </>

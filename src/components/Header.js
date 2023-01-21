@@ -15,8 +15,8 @@ const Header = () => {
 //    `
 
     return ( 
-        <header className="bg-gray-900 w-64 h-130">
-            <h1 className="text-cyan-400 text-4xl font-['Poppins']">MOVIBES</h1>
+        <header className="bg-neutral-900 w-64 h-130 rounded-r-3xl">
+            <h1 className="text-cyan-400 text-4xl font-['oswald'] text-center pt-4 text-shadow">MOVIBES</h1>
             <Navigation />
             <PlayMovieQuizes />
         </header>

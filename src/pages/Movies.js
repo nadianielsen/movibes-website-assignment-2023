@@ -8,7 +8,7 @@ const style = css`
 const Movies = () => {
     return ( 
     <div css={style}>
-    <h1>hi</h1>
+    <h1></h1>
     </div> 
     );
 }
