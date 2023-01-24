@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 // /** @jsxImportSource @emotion/react */
 // import { css } from "@emotion/react";
 // import {GrHomeRounded} from "react-icons/gr"
@@ -23,25 +23,25 @@ import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
 
-    // let activeStyle = {
-    //     backgroundColor: "#3dd2cd55",
-    //     borderRight: "4px solid #3DD2CC" ,
-    //     color: "#3DD2CC"
-    //   };
-    
-      // let activeClassName = "underline";
+  // let activeStyle = {
+  //     backgroundColor: "#3dd2cd55",
+  //     borderRight: "4px solid #3DD2CC" ,
+  //     color: "#3DD2CC"
+  //   };
 
-    const activeLink = "bg-cyan-400 text-cyan-400 bg-opacity-40 h-20 flex items-center justify-center border-r-4 border-cyan-400"
-    const normalLink = ""
+  // let activeClassName = "underline";
 
-    return ( 
-        <nav className="grid gap-10 mt-16 text-neutral-700 text-center">
-            <NavLink to={"/"} className={({ isActive}) => (isActive ? activeLink : normalLink)}>Home</NavLink>
-            <NavLink to={"/movies"} className={({ isActive}) => (isActive ? activeLink : normalLink)}>Movies</NavLink>
-            <NavLink to={"/tvseries"} className={({ isActive}) => (isActive ? activeLink : normalLink)}>TV Series</NavLink>
-            <NavLink to={"/upcoming"} className={({ isActive}) => (isActive ? activeLink : normalLink)}>Upcoming</NavLink>
-        </nav>
-     );
+  const activeLink = "bg-cyan-400 text-cyan-400 p-6 bg-opacity-60 flex items-center justify-center border-r-4 border-cyan-400 font-['Poppins'] font-semibold"
+  const normalLink = "p-6 font-semibold"
+
+  return (
+    <nav className="grid mt-10 text-neutral-700 text-center">
+      <NavLink to={"/"} className={({ isActive }) => (isActive ? activeLink : normalLink)}>Home</NavLink>
+      <NavLink to={"/movies"} className={({ isActive }) => (isActive ? activeLink : normalLink)}>Movies</NavLink>
+      <NavLink to={"/tvseries"} className={({ isActive }) => (isActive ? activeLink : normalLink)}>TV Series</NavLink>
+      <NavLink to={"/upcoming"} className={({ isActive }) => (isActive ? activeLink : normalLink)}>Upcoming</NavLink>
+    </nav>
+  );
 }
- 
+
 export default Navigation;

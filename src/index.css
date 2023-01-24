@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Poppins:wght@400;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,6 +6,11 @@
 @layer base {
   html {
     font-family: 'Oswald', sans-serif;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  body {
+    background-color: #212121;
   }
 
   @responsive {
@@ -14,4 +19,9 @@
     }
   }
   
+}
+
+#root {
+  display: grid;
+  grid-template-columns: 16rem 1fr;
 }
