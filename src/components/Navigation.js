@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 // /** @jsxImportSource @emotion/react */
 // import { css } from "@emotion/react";
-// import {GrHomeRounded} from "react-icons/gr"
+import {GrHomeRounded} from "react-icons/gr"
 
 
 // const styleNav = css`
@@ -37,6 +37,7 @@ const Navigation = () => {
   return (
     <nav className="grid mt-10 text-neutral-700 text-center">
       <div className="">
+        {/* <GrHomeRounded  className="mr-2"/> */}
         <NavLink to={"/"} className={({ isActive }) => (isActive ? activeLink : normalLink)}>Home</NavLink>
       </div>
       <NavLink to={"/movies"} className={({ isActive }) => (isActive ? activeLink : normalLink)}>Movies</NavLink>
