@@ -1,6 +1,6 @@
 // /** @jsxImportSource @emotion/react */
 // import { css } from "@emotion/react";
-import ticket from "./ticket.svg"
+import ticket from "../ticket.svg"
 
 // const styleTicket = css`
 //     background-color: #3dd2cd66;
