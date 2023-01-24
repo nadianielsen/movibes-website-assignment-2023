@@ -36,7 +36,9 @@ const Navigation = () => {
 
   return (
     <nav className="grid mt-10 text-neutral-700 text-center">
-      <NavLink to={"/"} className={({ isActive }) => (isActive ? activeLink : normalLink)}>Home</NavLink>
+      <div className="">
+        <NavLink to={"/"} className={({ isActive }) => (isActive ? activeLink : normalLink)}>Home</NavLink>
+      </div>
       <NavLink to={"/movies"} className={({ isActive }) => (isActive ? activeLink : normalLink)}>Movies</NavLink>
       <NavLink to={"/tvseries"} className={({ isActive }) => (isActive ? activeLink : normalLink)}>TV Series</NavLink>
       <NavLink to={"/upcoming"} className={({ isActive }) => (isActive ? activeLink : normalLink)}>Upcoming</NavLink>
