@@ -1,32 +1,43 @@
-import { Link } from "react-router-dom";
-import MovieCards from "../components/MovieCards";
 import SortBy from "../components/SortBy";
-import notification from "../components/notification.svg"
-import { BsFillPersonFill } from "react-icons/bs"
+import { FaPlay } from "react-icons/fa"
+import MovieSection from "../components/MovieSection";
+import { AiOutlineInfoCircle } from "react-icons/ai"
+import Search from "../components/Search";
+import NotificationProfileSection from "../components/NotificationProfileSection";
 
 
 const Home = () => {
     return ( 
-       <article className="">
-        <div className="flex">
-            <input type="search" name="search" id="search" placeholder="Search for movies, TV shows..." className="w-[56rem] h-16 rounded-full ml-5 pl-10 bg-[#262626] mt-6"/>
-            <button className="w-16 h-16 bg-[#262626] rounded-full mt-6 ml-32">
-                <img src={notification} alt="" className="m-auto pt-1" />
-            </button>
-            <div className="w-16 h-16 bg-[#262626] mt-6 rounded-full ml-8">
-            <BsFillPersonFill className="text-4xl text-neutral-500 m-auto mt-3 "/>
+        <>
+       <article className="col-span-3">
+             <Search />      
+            <div className="bg-white w-[56rem] h-72 rounded-3xl ml-5 mt-10 flex justify-end items-end">
+                <button className="bg-neutral-300 bg-opacity-20 w-32 h-14 rounded-2xl backdrop-blur-sm mb-4 mr-[2rem]">
+                    <span className="flex gap-4 ml-7 text-white">
+                    <FaPlay className="mt-1"/> 
+                    Play
+                    </span>
+                    </button>
+                    <button className="bg-neutral-300 bg-opacity-20 w-44 h-14 rounded-2xl backdrop-blur-sm mb-4 mr-6">
+                        <span className="flex gap-4 text-white ml-8">
+                            <AiOutlineInfoCircle className="mt-1"/>
+                            More Info
+                        </span>
+                    </button>
             </div>
-        </div>
-            <div className="bg-white w-[56rem] h-72 rounded-3xl ml-5 mt-10"></div>
             <div>
-                <div className="flex gap-x-[44.7rem]">
-                <h2 className="font-semibold font-['Poppins'] text-neutral-200 pl-5 pt-5 text-2xl">Trending</h2>
-                <Link className="text-neutral-600 pt-7 font-semibold font-['Poppins']">See all</Link>
-                </div>
             </div>
-            <MovieCards />
-            <SortBy />
+                <MovieSection text="Trending"/>
+                <MovieSection text="Upcoming"/>
+                <MovieSection text="TV Series"/>
+                <MovieSection text="Popular Movies This Month"/>
        </article>
+       <article>
+        <NotificationProfileSection />
+        <SortBy text="Categories"/>
+       </article>
+
+    </>
     );
 }
  

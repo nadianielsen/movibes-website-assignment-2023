@@ -5,7 +5,7 @@ function App() {
   return (
     <>
   <Header />
-  <main className="">
+  <main className="grid grid-cols-4 w-full">
     <Outlet />
   </main>
   </>
