@@ -4,7 +4,7 @@ import { BsFillPersonFill } from "react-icons/bs"
 
 const NotificationProfileSection = () => {
     return ( 
-        <section className="flex gap-6 justify-end m-6">
+        <section className="flex gap-x-6 justify-end mt-6 mr-6">
          <button className="w-16 h-16 bg-[#262626] rounded-full">
                 <img src={notification} alt="" className="m-auto pt-1" />
             </button>
