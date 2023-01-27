@@ -10,9 +10,7 @@ const useAxios = (url) => {
 
     useEffect(() => {
         axios(url)
-        .then((response) => {
-            console.log(response)
-            setData(response.data.results)})
+        .then((response) => setData(response.data))
         .catch(() => setError("Something went wrong!!"))
         .finally(() => setLoading(false))
     }, []);

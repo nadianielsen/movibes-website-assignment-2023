@@ -1,13 +1,11 @@
 import useAxios from "../customHooks/useAxios";
 import { Link } from "react-router-dom";
 
+const UpcomingMovies = () => {
 
-const Trending = () => {
-        
-    const {data, loading, error} = useAxios(`https://api.themoviedb.org/3/trending/all/day?api_key=75f15351c6119a96302b866663e596b0&language=en-US&page=1`)
-   
+    const {data, loading, error} = useAxios(`https://api.themoviedb.org/3/movie/upcoming?api_key=75f15351c6119a96302b866663e596b0&language=en-US&page=1`)
 
-    return (
+    return ( 
         <article className="mt-6">
         <article className="flex justify-between pr-11">
             <h2 className="font-semibold font-['Poppins'] text-neutral-200 pl-5 pt-5 text-2xl">Trending</h2>
@@ -16,7 +14,6 @@ const Trending = () => {
         <article className="flex">
             {error && <p>{error}</p>}
             {loading && <p>Loading...</p>}
-            {/* index tæller op til 19 og if statementen stopper den for at gå mere 4 ting, og derfor at vi bruger return er, fordi vi går ind i javascript/jsx med curlybrackets. */}
             {data?.results?.map((movie, index) => {
                if (index < 4 ) return (<img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="" className="w-48 h-72 rounded-3xl m-5 relative" />)
             })}
@@ -25,4 +22,4 @@ const Trending = () => {
      );
 }
  
-export default Trending;
+export default UpcomingMovies;
