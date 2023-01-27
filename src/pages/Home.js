@@ -4,6 +4,7 @@ import MovieSection from "../components/MovieSection";
 import { AiOutlineInfoCircle } from "react-icons/ai"
 import Search from "../components/Search";
 import NotificationProfileSection from "../components/NotificationProfileSection";
+import Trending from "../components/Trending";
 
 
 const Home = () => {
@@ -27,7 +28,7 @@ const Home = () => {
             </div>
             <div>
             </div>
-                <MovieSection text="Trending"/>
+                <Trending />
                 <MovieSection text="Upcoming"/>
                 <MovieSection text="TV Series"/>
                 <MovieSection text="Popular Movies This Month"/>
