@@ -9,7 +9,7 @@ const UpcomingMovies = () => {
     return ( 
         <article className="mt-6">
         <article className="flex justify-between pr-11">
-            <h2 className="font-semibold font-['Poppins'] text-neutral-200 pl-5 pt-5 text-2xl">Trending</h2>
+            <h2 className="font-semibold font-['Poppins'] text-neutral-200 pl-5 pt-5 text-2xl">Upcoming Movies</h2>
             <Link className="text-neutral-600 pt-7 font-semibold font-['Poppins']">See all</Link>
         </article>
         <article className="flex">
