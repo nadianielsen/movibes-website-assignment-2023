@@ -11,7 +11,7 @@ const TVSeriesComponent = () => {
         <article className="mt-6">
         <article className="flex justify-between pr-11">
             <h2 className="font-semibold font-['Poppins'] text-neutral-200 pl-5 pt-5 text-2xl">TV Series</h2>
-            <Link className="text-neutral-600 pt-7 font-semibold font-['Poppins']">See all</Link>
+            <Link to={"/seeall"} className="text-neutral-600 pt-7 font-semibold font-['Poppins']">See all</Link>
         </article>
         <article className="flex">
             {error && <p>{error}</p>}

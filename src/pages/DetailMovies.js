@@ -4,11 +4,16 @@ import { FaPlay } from "react-icons/fa"
 import TextStyle from "../components/TextStyle";
 import GenreBox from "../components/GenreBox"; 
 import { FiHeart, FiShare2 } from "react-icons/fi"
-import { BsBookmark } from "react-icons/bs"
+import { BsBookmark, BsListUl } from "react-icons/bs"
 import {IoIosStar} from "react-icons/io"
+// import useAxios from "../customHooks/useAxios";
+import ButtonTickets from "../pages/ButtonTickets.svg"
 
 
 const DetailMovies = () => {
+
+    // const {data, laoding, error} = useAxios(``)
+
     return ( 
         <>
         <article className="col-span-3">
@@ -23,32 +28,36 @@ const DetailMovies = () => {
                     </div>
                     </div>
                 </div>
-                <article className="grid grid-cols-3 grid-row-5 w-[75rem] ml-10 m-5 gap-y-5">
-                <article className="flex gap-x-16 col-span-3">
-                <TextStyle text="Movie Title:"/>
-                <TextStyle text="Year"/>
-                <TextStyle text="PG-13"/>
-                <TextStyle text="Length"/>
-                <GenreBox />
-                <div className="flex ml-[18rem]  gap-x-10">
-                <FiHeart className="text-neutral-300 text-2xl"/>
-                <FiShare2  className="text-neutral-300 text-2xl"/>
-                <BsBookmark className="text-neutral-300 text-2xl"/>
-                <IoIosStar className="text-yellow-400 text-2xl"/>
-                </div>
-                </article>
-                <div className="col-span-2 row-start-2 mt-5">
-                <TextStyle text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ipsum dolorum officiis ipsam. Inventore sit nostrum eligendi labore pariatur. Deleniti impedit illum ipsam, non omnis molestias soluta veniam molestiae quae."/>
-                </div>
-                <div className=" col-start-1 row-start-3">
-                <TextStyle text="Directer:"/>
-                <TextStyle text="Writers:" />
-                <TextStyle text="Star:" />
-                </div>
-                <button className="w-64 h-14 bg-cyan-400 bg-opacity-75 text-neutral-300 rounded-2xl col-span-1 row-start-4">Top Rated Movie</button>
-                <article className="col-start-3 row-start-2">
-                </article>
-                </article>
+                <article className="grid grid-cols-3 grid-rows-3 w-[75rem] m-6">
+                    <div className="col-span-2 self-center">
+                    <div className="flex gap-x-7">
+                        <TextStyle text="Movie Title:" />
+                        <TextStyle text="Year" />
+                        <TextStyle text="PG-13" />
+                        <TextStyle text="Length" />
+                        <GenreBox />
+                        </div>
+                    </div>
+                        <div className="row-start-2 col-span-2">
+                            <TextStyle text="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus provident illo nisi porro illum quis debitis in laborum blanditiis molestias itaque ea nemo, possimus ab harum ipsam nobis, officia minima."/>
+                        </div>
+                        <div className="flex col-start-3 col-end-3 gap-x-7 m-auto mr-10">
+                            <FiHeart className="text-neutral-300 text-2xl" />
+                            <FiShare2 className="text-neutral-300 text-2xl" />
+                            <BsBookmark className="text-neutral-300 text-2xl" />
+                            <div className="flex gap-x-2">
+                            <IoIosStar className="text-yellow-400 text-2xl" />
+                            <TextStyle text="8.5"/>
+                            <p className="text-[#666666] ">| 350K</p>
+                            </div>
+                        </div>
+                        <div className="col-start-3 row-start-2 m-auto">
+                            <button className="bg-cyan-400 w-80 h-14 rounded-2xl text-white flex justify-center items-center pr-3"><img src={ButtonTickets} alt="" className="w-8"/>See Showtimes</button>
+                        </div>
+                        <div className="col-start-3 row-start-3 m-auto">
+                            <button className="bg-black w-80 h-14 rounded-2xl text-white flex justify-center items-center gap-x-1"><BsListUl className="text-xl"/>More watch options</button>        
+                        </div>
+                    </article>
         </article>
             <NotificationProfileSection />
                

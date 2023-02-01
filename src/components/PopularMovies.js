@@ -5,14 +5,20 @@ import {IoIosStar} from "react-icons/io"
 
 const PopularMovies = () => {
 
-    const {data, loading, error} = useAxios(`https://api.themoviedb.org/3/movie/popular?api_key=75f15351c6119a96302b866663e596b0&language=en-US&page=1`)
+    const {data, loading, error} = useAxios(`https://api.themoviedb.org/3/trending/movie/week?api_key=75f15351c6119a96302b866663e596b0`)
+
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+    const date = new Date()
+
+    const month = date.getMonth()
 
     console.log(data)
 
     return ( 
         <article className="mt-6">
         <article className="flex justify-between pr-11">
-        <h2 className="font-semibold font-['Poppins'] text-neutral-200 pl-5 pt-5 text-2xl">Popular Movies</h2>
+        <h2 className="font-semibold font-['Poppins'] text-neutral-200 pl-5 pt-5 text-2xl">{`Popular movies this ${monthNames[month]}`}</h2>
         <Link className="text-neutral-600 pt-7 font-semibold font-['Poppins']">See all</Link>
         </article>
         <article className="flex">

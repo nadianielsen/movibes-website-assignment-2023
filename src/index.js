@@ -8,6 +8,10 @@ import Movies from './pages/Movies';
 import TVSeries from './pages/TVSeries';
 import Upcoming from './pages/Upcoming';
 import DetailMovies from './pages/DetailMovies';
+import SignUp from './pages/SignUp';
+import LogOut from './pages/LogOut';
+import Login from './pages/LogIn';
+import SeeAll from './components/SeeAll';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +21,10 @@ const router = createBrowserRouter(
       <Route path='/tvseries' element={<TVSeries />}/>
       <Route path='/upcoming' element={<Upcoming />}/>
       <Route path='/detailmovies' element={<DetailMovies />}/>
+      <Route path='/login' element={<Login />} />
+      <Route path='/signup' element={<SignUp />} />
+      <Route path='/logout' element={<LogOut />} />
+      <Route path='/seeall' element={<SeeAll />} />
     </Route>
   )
 )

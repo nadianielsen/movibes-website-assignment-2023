@@ -1,21 +1,26 @@
+import MovieList from "../components/MovieList";
 import NotificationProfileSection from "../components/NotificationProfileSection";
-import PopularMovies from "../components/PopularMovies";
 import Search from "../components/Search";
 import SortBy from "../components/SortBy";
-import Trending from "../components/Trending";
-import UpcomingMovies from "../components/UpcomingMovies";
 
 
 
 const Movies = () => {
+
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+    const date = new Date()
+
+    const month = date.getMonth()
+
     return ( 
         <>
         <article className="col-span-3">
             <Search />
-                <Trending />
-                <UpcomingMovies />
+            <MovieList headline="Trending" url={`https://api.themoviedb.org/3/trending/all/day?api_key=75f15351c6119a96302b866663e596b0&language=en-US&page=1`}/>
+            <MovieList headline={"Upcoming Movies"} url={`https://api.themoviedb.org/3/movie/upcoming?api_key=75f15351c6119a96302b866663e596b0&language=en-US&page=1`} />
                 {/* <MovieSection text="TV Series"/> */}
-                <PopularMovies text="Popular Movies This Month"/>
+            <MovieList headline={`Popular movies this ${monthNames[month]}`} url={`https://api.themoviedb.org/3/trending/movie/week?api_key=75f15351c6119a96302b866663e596b0`}/>
         </article>
         <div>
         <NotificationProfileSection />
