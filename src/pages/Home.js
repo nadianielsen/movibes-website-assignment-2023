@@ -1,32 +1,39 @@
-import { Link } from "react-router-dom";
-import MovieCards from "../components/MovieCards";
 import SortBy from "../components/SortBy";
-import notification from "../components/notification.svg"
-import { BsFillPersonFill } from "react-icons/bs"
+import MovieSection from "../components/MovieSection";
+import Search from "../components/Search";
+import NotificationProfileSection from "../components/NotificationProfileSection";
+import Trending from "../components/Trending";
+import UpcomingComponent from "../components/UpcomingComponent";
+import TVSeriesComponent from "../components/TVSeriesComponent";
+import PopularMovies from "../components/PopularMovies";
+import BannerHome from "../components/BannerHome";
+import MovieList from "../components/MovieList";
 
 
 const Home = () => {
+
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+    const date = new Date()
+
+    const month = date.getMonth()
+
     return ( 
-       <article className="">
-        <div className="flex">
-            <input type="search" name="search" id="search" placeholder="Search for movies, TV shows..." className="w-[56rem] h-16 rounded-full ml-5 pl-10 bg-[#262626] mt-6"/>
-            <button className="w-16 h-16 bg-[#262626] rounded-full mt-6 ml-32">
-                <img src={notification} alt="" className="m-auto pt-1" />
-            </button>
-            <div className="w-16 h-16 bg-[#262626] mt-6 rounded-full ml-8">
-            <BsFillPersonFill className="text-4xl text-neutral-500 m-auto mt-3 "/>
-            </div>
-        </div>
-            <div className="bg-white w-[56rem] h-72 rounded-3xl ml-5 mt-10"></div>
-            <div>
-                <div className="flex gap-x-[44.7rem]">
-                <h2 className="font-semibold font-['Poppins'] text-neutral-200 pl-5 pt-5 text-2xl">Trending</h2>
-                <Link className="text-neutral-600 pt-7 font-semibold font-['Poppins']">See all</Link>
-                </div>
-            </div>
-            <MovieCards />
-            <SortBy />
+        <>
+       <article className="col-span-3">
+             <Search />      
+             <BannerHome />
+             <MovieList headline="Trending" url={`https://api.themoviedb.org/3/trending/all/day?api_key=75f15351c6119a96302b866663e596b0&language=en-US&page=1`}/>
+             <MovieList headline={"Upcoming"} url={`https://api.themoviedb.org/3/movie/upcoming?api_key=75f15351c6119a96302b866663e596b0&language=en-US&page=1`}/>
+             <MovieList headline={"TV Series"} url={`https://api.themoviedb.org/3/tv/popular?api_key=75f15351c6119a96302b866663e596b0&language=en-US&page=1`}/>
+             <MovieList headline={`Popular movies this ${monthNames[month]}`} url={`https://api.themoviedb.org/3/trending/movie/week?api_key=75f15351c6119a96302b866663e596b0`}/>
        </article>
+       <article>
+        <NotificationProfileSection />
+        <SortBy text="Categories"/>
+       </article>
+
+    </>
     );
 }
  

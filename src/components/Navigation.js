@@ -42,25 +42,25 @@ const Navigation = () => {
     <nav className="grid mt-10 text-center">
         <NavLink to={"/"} className={({ isActive }) => (isActive ? activeLink : normalLink)}>
           <span className="flex gap-2">
-            <FaHome  className="mt-0.5"/>
+            <FaHome  className="mt-1"/>
             Home
           </span>
         </NavLink>
       <NavLink to={"/movies"} className={({ isActive }) => (isActive ? activeLink : normalLink)}>
         <span className="flex gap-2 ">
-        <FaFilm className="mt-0.5"/>
+        <FaFilm className="mt-1"/>
         Movies
         </span>
         </NavLink>
       <NavLink to={"/tvseries"} className={({ isActive }) => (isActive ? activeLink : normalLink)}>
         <span className="flex gap-2 ">
-        <FaTv className="mt-0.5"/>
+        <FaTv className="mt-1"/>
         TV Series
         </span>
         </NavLink>
       <NavLink to={"/upcoming"} className={({ isActive }) => (isActive ? activeLink : normalLink)}>
         <span className="flex gap-2 ">
-        <FaCalendarAlt className="mt-0.5"/>
+        <FaCalendarAlt className="mt-1"/>
         Upcoming
         </span>
         </NavLink>
