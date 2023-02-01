@@ -12,6 +12,7 @@ import SignUp from './pages/SignUp';
 import LogOut from './pages/LogOut';
 import Login from './pages/LogIn';
 import SeeAll from './components/SeeAll';
+import TrailerSite from './pages/TrailerSite';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
       <Route path='/signup' element={<SignUp />} />
       <Route path='/logout' element={<LogOut />} />
       <Route path='/seeall' element={<SeeAll />} />
+      <Route path='/trailer' element={<TrailerSite />} />
     </Route>
   )
 )
