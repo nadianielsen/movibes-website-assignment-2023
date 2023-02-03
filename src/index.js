@@ -12,19 +12,23 @@ import SignUp from './pages/SignUp';
 import LogOut from './pages/LogOut';
 import Login from './pages/LogIn';
 import SeeAll from './components/SeeAll';
+import TrailerSite from './pages/TrailerSite';
+import AllMoviesPage from './pages/AllMoviesPage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
       <Route index element={<Home />}/>
+      <Route path='/allmoviespage' element={<AllMoviesPage />}/>
       <Route path='/movies' element={<Movies />}/>
       <Route path='/tvseries' element={<TVSeries />}/>
       <Route path='/upcoming' element={<Upcoming />}/>
-      <Route path='/detailmovies' element={<DetailMovies />}/>
+      <Route path='/detailmovies/:id' element={<DetailMovies />}/>
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<SignUp />} />
       <Route path='/logout' element={<LogOut />} />
       <Route path='/seeall' element={<SeeAll />} />
+      <Route path='/trailer' element={<TrailerSite />} />
     </Route>
   )
 )

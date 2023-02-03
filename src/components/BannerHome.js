@@ -3,6 +3,8 @@ import { FaPlay } from "react-icons/fa"
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import useAxios from "../customHooks/useAxios";
+import { useParams } from "react-router-dom";
 
 
 const BannerHome = () => {
@@ -38,18 +40,23 @@ const BannerHome = () => {
         }
     }, [featured]);
 
+    // const {id} = useParams();
 
-    return ( 
+    // const {data: movie, error} = useAxios(`https://api.themoviedb.org/3/movie/${id}?api_key=75f15351c6119a96302b866663e596b0&language=en-US`)
+
+
+
+    return loading ? <p>Loading...</p> : ( 
     <div className="bg-transparent w-[56rem] rounded-3xl ml-5 mt-10 flex justify-end items-end bg-gradient-to-b from-neutral-700 bg-blend-multiply relative aspect-video">
                 <img src={`https://image.tmdb.org/t/p/original${backdrop?.file_path}`} alt="" className="absolute w-full h-full rounded-3xl object-cover" />
                 <button className="bg-neutral-300 bg-opacity-20 w-32 h-14 rounded-2xl backdrop-blur-sm mb-4 mr-[2rem] box-shadow">
-                    <span className="flex gap-4 ml-7 text-white">
+                    <Link to={"/trailer"} className="flex gap-4 ml-7 text-white">
                     <FaPlay className="mt-1"/> 
                     Play
-                    </span>
+                    </Link>
                     </button>
                     <button className="bg-neutral-300 bg-opacity-20 w-44 h-14 rounded-2xl backdrop-blur-sm mb-4 mr-6 box-shadow">
-                        <Link to={"/detailmovies"} className="flex gap-4 text-white ml-8">
+                        <Link to={`/detailmovies/${featured.id}`} className="flex gap-4 text-white ml-8">
                             <AiOutlineInfoCircle className="mt-1"/>
                             More Info
                         </Link>

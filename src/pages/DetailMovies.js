@@ -6,27 +6,34 @@ import GenreBox from "../components/GenreBox";
 import { FiHeart, FiShare2 } from "react-icons/fi"
 import { BsBookmark, BsListUl } from "react-icons/bs"
 import {IoIosStar} from "react-icons/io"
-// import useAxios from "../customHooks/useAxios";
+import useAxios from "../customHooks/useAxios";
 import ButtonTickets from "../pages/ButtonTickets.svg"
+import { Link, useParams } from "react-router-dom";
 
 
 const DetailMovies = () => {
 
-    // const {data, laoding, error} = useAxios(``)
+    const {id} = useParams();
+
+    const {data: movie, loading, error} = useAxios(`https://api.themoviedb.org/3/movie/${id}?api_key=75f15351c6119a96302b866663e596b0&language=en-US`)
+    console.log(movie)
 
     return ( 
         <>
         <article className="col-span-3">
             <Search />
-                <div className="w-[75rem] h-80 bg-white rounded-3xl flex justify-center items-center m-6">
-                    <div>
-                    <div className="inline-block text-center">
-                    <button className="bg-neutral-300 bg-opacity-20 w-20 h-20 rounded-full backdrop-blur-sm box-shadow">                    
+                <div className="w-[75rem] h-80 bg-[#212121] rounded-3xl flex justify-center items-center m-6 relative ">
+                {error && <p>{error}</p>}
+                {loading && <p>Loading...</p>}
+                {movie && (
+                        <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt="" className="absolute w-full h-full rounded-3xl object-cover" />
+                )}
+                    <h2 className="text-white black-text-shadow text-2xl absolute bottom-20">Watch Trailer</h2>
+                    <button className="bg-neutral-300 bg-opacity-20 w-20 h-20 rounded-full backdrop-blur-sm box-shadow"> 
+                    <Link to={"/trailer"}>
                         <FaPlay className="text-white m-6 text-4xl"/> 
+                    </Link>                   
                     </button>
-                        <h2 className="text-white black-text-shadow text-2xl">Watch Trailer</h2>
-                    </div>
-                    </div>
                 </div>
                 <article className="grid grid-cols-3 grid-rows-3 w-[75rem] m-6">
                     <div className="col-span-2 self-center">
