@@ -19,7 +19,7 @@ const MovieList = ({headline, url}) => {
             {/* index tæller op til 19 og if statementen stopper den for at gå mere 4 ting, og derfor at vi bruger return er, fordi vi går ind i javascript/jsx med curlybrackets. */}
             {data?.results?.map((movie, index) => {
                if (index < 4 ) return (
-                <Link to={"/detailmovies"} className="text-none">
+                <Link to={`/detailmovies/${movie.id}`} className="text-none">
                     <div className="relative">
                         <div className="bg-neutral-300 bg-opacity-20 w-20 h-7 rounded-tr-3xl rounded-bl-3xl ml-[6.99rem] flex justify-evenly backdrop-blur-sm absolute left-5">
                             <IoIosStar className="text-yellow-400 text-2xl"/>
@@ -34,6 +34,7 @@ const MovieList = ({headline, url}) => {
         </article>
 
      );
-}
+    }
+    // 
  
 export default MovieList;
