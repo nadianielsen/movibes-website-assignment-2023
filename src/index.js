@@ -13,13 +13,11 @@ import LogOut from './pages/LogOut';
 import Login from './pages/LogIn';
 import SeeAll from './components/SeeAll';
 import TrailerSite from './pages/TrailerSite';
-import AllMoviesPage from './pages/AllMoviesPage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
       <Route index element={<Home />}/>
-      <Route path='/allmoviespage' element={<AllMoviesPage />}/>
       <Route path='/movies' element={<Movies />}/>
       <Route path='/tvseries' element={<TVSeries />}/>
       <Route path='/upcoming' element={<Upcoming />}/>
