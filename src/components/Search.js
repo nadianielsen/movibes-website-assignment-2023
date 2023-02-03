@@ -5,12 +5,13 @@ import { createSearchParams, useNavigate } from "react-router-dom";
 const Search = () => {
     
         const navigate = useNavigate()
+        console.log(navigate)
     
         const handleSubmit = (e) => {
-            e.preventDefault(); // når du laver dennne her skal du huske reset som er på linje 13. Brug det til formular f.eks. searchbar, kontaktformular!!!!!!!!
+            e.preventDefault(); // når du laver denne her skal du huske reset som er på linje 13. Brug det til formular f.eks. searchbar, kontaktformular!!!!!!!!
             let params  = { search: e.target.search.value }
             navigate({
-                     pathname:"/detailMovies",
+                     pathname:"/allmoviespage",
                      search: `?${createSearchParams(params)}`
                     })
             console.log(e.target.search.value)
