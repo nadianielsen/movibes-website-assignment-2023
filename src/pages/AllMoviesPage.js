@@ -14,7 +14,7 @@ const AllMoviesPage = () => {
 
     console.log(params.getAll("search"))
 
-    console.log(params)
+    // console.log(params)
 
     useEffect(() => {
     
