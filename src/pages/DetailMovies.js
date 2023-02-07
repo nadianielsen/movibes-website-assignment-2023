@@ -4,13 +4,13 @@ import TextStyle from "../components/TextStyle";
 import GenreBox from "../components/GenreBox"; 
 import { FiHeart, FiShare2 } from "react-icons/fi"
 import { BsBookmark, BsListUl } from "react-icons/bs"
-import ButtonTickets from "../pages/ButtonTickets.svg"
 import MovieTitleDetail from "../components/MovieTitleDetail";
 import ReleaseDate from "../components/ReleaseDate";
 import MovieLength from "../components/MovieLength";
 import Rating from "../components/Rating";
 import BannerDetails from "../components/BannerDetails";
 import MovieDescription from "../components/MovieDescription";
+import CrewDetails from "../components/CrewDetails";
 
 
 const DetailMovies = () => {
@@ -40,14 +40,9 @@ const DetailMovies = () => {
                         <BsBookmark className="text-neutral-300 text-2xl" />
                         <Rating />
                     </div>
-                    </article>
-                    <article className="flex w-[75rem] ml-6">
                     <MovieDescription />
-                    <div className="col-start-3 row-start-1 m-auto">
-                    <button className="bg-cyan-400 w-80 h-14 rounded-2xl text-white flex justify-center items-center pr-3"><img src={ButtonTickets} alt="" className="w-8"/>See Showtimes</button>
-                    </div>
-                    
                     </article>
+                    <CrewDetails />
             </article>   
         </>
      );

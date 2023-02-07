@@ -1,4 +1,3 @@
-import TextStyle from "./TextStyle";
 import useAxios from "../customHooks/useAxios";
 import { useParams } from "react-router-dom";
 
@@ -12,10 +11,11 @@ const GenreBox = () => {
         <>
         {error && <p>{error}</p>}
             {loading && <p>Loading...</p>}
-            {movie?.genres.map(genre => 
-            <div className="border border-neutral-300 border-opacity-30 rounded-2xl text-center px-[0.09rem]">
-                <TextStyle text={genre.name}  />
+            {movie?.genres.map((genre, index) => { if(index < 3 ) return (
+            <div className="border border-neutral-300 border-opacity-30 rounded-2xl text-center px-[0.3rem]">
+                <p className="text-neutral-200 text-sm">{genre.name} </p>  
             </div>
+            )}
             )}
         </> 
     );
