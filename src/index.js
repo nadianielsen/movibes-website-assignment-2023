@@ -14,6 +14,7 @@ import Login from './pages/LogIn';
 import SeeAll from './components/SeeAll';
 import TrailerSite from './pages/TrailerSite';
 import AllMoviesPage from './pages/AllMoviesPage';
+import Search from './pages/Search';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,6 +30,7 @@ const router = createBrowserRouter(
       <Route path='/logout' element={<LogOut />} />
       <Route path='/seeall' element={<SeeAll />} />
       <Route path='/trailer/:id' element={<TrailerSite />} />
+      <Route path='/search' element={<Search />} />
     </Route>
   )
 )
