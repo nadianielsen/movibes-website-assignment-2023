@@ -9,7 +9,7 @@ const BannerDetails = () => {
     const {data: movie, loading, error} = useAxios(`https://api.themoviedb.org/3/movie/${id}?api_key=75f15351c6119a96302b866663e596b0&language=en-US`)
 
     return (
-        <div className="w-[75rem] h-80 bg-[#212121] rounded-3xl flex justify-center items-center m-6 relative ">
+        <div className="w-[76rem] h-80 bg-[#212121] rounded-3xl flex justify-center items-center m-6 relative ">
         {error && <p>{error}</p>}
         {loading && <p>Loading...</p>}
         {movie && (
@@ -26,3 +26,4 @@ const BannerDetails = () => {
 }
 
 export default BannerDetails;
+

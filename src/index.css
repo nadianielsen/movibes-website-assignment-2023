@@ -29,6 +29,23 @@
     .border-bottom {
       border-bottom: 1rem solid #666666;
     }
+
+    .logout-textshadow {
+      text-shadow: 0 0 8px #3dd2cd79;
+    }
+
+    .box-shadow-cast {
+      box-shadow: 0 0 4px #282828;
+    }
+
+    .box-blue-shadow {
+      box-shadow: 0 0 1px #22d3ee;
+    }
+  }
+
+  .grid-columns {
+    display: grid;
+    grid-template-columns: 55rem 20rem;
   }
   
 }

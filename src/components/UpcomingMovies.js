@@ -25,7 +25,8 @@ const UpcomingMovies = () => {
                         </div>
                         <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="" className="w-48 h-72 rounded-3xl m-5" />
                     </div>
-                </Link>               )
+                </Link>               
+                )
             })}
         </article>
         </article>

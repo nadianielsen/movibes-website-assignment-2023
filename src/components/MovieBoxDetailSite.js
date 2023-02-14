@@ -1,20 +1,17 @@
 import { Link } from "react-router-dom";
-import moviecollage from "./moviecollage.svg"
 import { BsListUl } from "react-icons/bs";
 
-const MovieBoxDetailSite = () => {
+const MovieBoxDetailSite = ({img, headline}) => {
 
-    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-
-    const date = new Date()
-
-    const month = date.getMonth()
 
     return ( 
-                <div className="bg-white w-80 h-48 rounded-xl aspect-video relative left-5 bottom-20 flex">
-                <img src={moviecollage} alt="" className=" w-full h-full object-cover absolute rounded-xl"/>
-                <div className="absolute bg-neutral-300 bg-opacity-20 w-80 h-12 rounded-xl backdrop-blur-sm top-36">
-                    <Link className="text-white relative text-sm top-3.5 left-3 flex gap-1"><BsListUl className="text-xl"/>{`The Best Movies and Shows in ${monthNames[month]}`}</Link>
+                <div className="bg-white w-80 h-48 rounded-xl aspect-video relative">
+                <img src={img} alt="" className=" w-full h-full object-cover absolute rounded-xl"/>
+                {/* <div className="bg-black bg-opacity-40 w-80 h-12 rounded-xl backdrop-blur-sm relative top-36">
+                    <Link className="text-white text-sm top-3.5 left-3 flex gap-1 absolute"><BsListUl className="text-xl"/>{`The Best Movies and Shows in ${monthNames[month]}`}</Link>
+                </div> */}
+                <div className="bg-black bg-opacity-40 w-80 h-12 rounded-xl backdrop-blur-sm relative top-36">
+                    <Link className="text-white text-sm top-3.5 left-3 flex gap-1 absolute"><BsListUl className="text-xl"/>{headline}</Link>
                 </div>
                 </div>
      );
