@@ -15,6 +15,7 @@ import SeeAll from './components/SeeAll';
 import TrailerSite from './pages/TrailerSite';
 import AllMoviesPage from './pages/AllMoviesPage';
 import Search from './pages/Search';
+import DetailMoviesToSimilarMovies from './pages/DetailMoviesToSimilarMovies';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
       <Route path='/tvseries' element={<TVSeries />}/>
       <Route path='/upcoming' element={<Upcoming />}/>
       <Route path='/detailmovies/:id' element={<DetailMovies />}/>
+      <Route path='/detailmoviessimilarmovies/:id' element={<DetailMoviesToSimilarMovies />}/>
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<SignUp />} />
       <Route path='/logout' element={<LogOut />} />

@@ -45,7 +45,7 @@ const BannerHome = () => {
 
 
     return loading ? <p>Loading...</p> : ( 
-    <div className="bg-transparent w-[56rem] rounded-3xl ml-5 mt-10 flex justify-end items-end bg-gradient-to-b from-neutral-700 bg-blend-multiply relative aspect-video">
+    <div className="bg-transparent w-[56rem] rounded-3xl ml-5 mt-10 flex justify-end items-end bg-gradient-to-b from-neutral-700 relative aspect-video">
                 <img src={`https://image.tmdb.org/t/p/original${backdrop?.file_path}`} alt="" className="absolute w-full h-full rounded-3xl object-cover" />
                     <Link to={`/trailer/${featured.id}`} className=" text-white">
                         <div className="bg-neutral-300 bg-opacity-20 w-32 h-14 rounded-2xl backdrop-blur-sm mb-4 box-shadow flex gap-4 justify-center items-center">

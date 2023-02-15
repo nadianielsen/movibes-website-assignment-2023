@@ -48,6 +48,10 @@
     grid-template-columns: 55rem 20rem;
   }
   
+  .black-box-shadow {
+    box-shadow: 0 2px 4px #00000098;
+  }
+
 }
 
 #root {

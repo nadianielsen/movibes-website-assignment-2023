@@ -20,12 +20,14 @@ const MovieList = ({headline, url}) => {
             {data?.results?.map((movie, index) => {
                if (index < 4 ) return (
                 <Link to={`/detailmovies/${movie.id}`} className="text-none">
+                    <div className="hover:scale-110 transition-all">
                     <div className="relative">
                         <div className="bg-neutral-300 bg-opacity-20 w-20 h-7 rounded-tr-3xl rounded-bl-3xl ml-[6.99rem] flex justify-evenly backdrop-blur-sm absolute left-5">
                             <IoIosStar className="text-yellow-400 text-2xl"/>
                             <h3 className="text-xs pt-1.5 text-white black-text-shadow">{movie.vote_average}</h3>
                         </div>
-                        <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="" className="w-48 h-72 rounded-3xl m-5" />
+                        <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="" className="w-48 h-72 m-5 rounded-3xl hover:black-box-shadow " />
+                    </div>
                     </div>
                 </Link>
                )

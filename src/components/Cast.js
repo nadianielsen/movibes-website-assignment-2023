@@ -17,6 +17,7 @@ const Cast = ({id}) => {
           transform: 'translate(-50%, -50%)',
           backgroundColor: '#212121',
           border: 'none',
+          boxShadow: '0 0 20px #0000006f'
         },
         overlay: {
             backgroundColor: '#282828b2',
