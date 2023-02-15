@@ -46,15 +46,17 @@ const Search = () => {
                 <h1 className="text-neutral-200 font-bold text-2xl">Movie</h1>
                 <article className="mt-6 grid grid-cols-5 gap-8">
                     {movies.map(movie => (
+                        <Link to={`/detailmovies/${movie.id}`} className="text-none">
+                        <div className="hover:scale-110 transition-all">
                         <div className="relative">
-                        <Link to={`/detailmovies/${movie.id}`}>
-                            <div className="bg-neutral-300 bg-opacity-20 w-20 h-7 rounded-tr-3xl rounded-bl-3xl ml-[6.99rem] flex justify-evenly backdrop-blur-sm absolute left-4">
-                            <IoIosStar className="text-yellow-400 text-2xl"/>
-                            <h3 className="text-xs pt-1.5 text-white">{movie.vote_average}</h3>
+                            <div className="bg-neutral-300 bg-opacity-20 w-20 h-7 rounded-tr-3xl rounded-bl-3xl ml-[6.99rem] flex justify-evenly backdrop-blur-sm absolute left-5">
+                                <IoIosStar className="text-yellow-400 text-2xl"/>
+                                <h3 className="text-xs pt-1.5 text-white black-text-shadow">{movie.vote_average}</h3>
+                            </div>
+                            <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="" className="w-48 h-72 m-5 rounded-3xl hover:black-box-shadow " />
                         </div>
-                        <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="" className="rounded-3xl w-52 h-[20rem] aspect-video"/>
-                        </Link>
                         </div>
+                    </Link>
                     ))}
                 </article>
                 </div>
@@ -77,12 +79,14 @@ const Search = () => {
                 <h1 className="text-neutral-200 font-bold">TV Series</h1>
                 <article className="mt-6 grid grid-cols-5 gap-8">
                 {tvSeries.map(tvshow => (
+                        <div className="hover:scale-110 transition-all">
                         <div className="relative">
-                            <div className="bg-neutral-300 bg-opacity-20 w-20 h-7 rounded-tr-3xl rounded-bl-3xl ml-[6.99rem] flex justify-evenly backdrop-blur-sm absolute left-4">
-                            <IoIosStar className="text-yellow-400 text-2xl"/>
-                            <h3 className="text-xs pt-1.5 text-white">{tvshow.vote_average}</h3>
+                            <div className="bg-neutral-300 bg-opacity-20 w-20 h-7 rounded-tr-3xl rounded-bl-3xl ml-[6.99rem] flex justify-evenly backdrop-blur-sm absolute left-5">
+                                <IoIosStar className="text-yellow-400 text-2xl"/>
+                                <h3 className="text-xs pt-1.5 text-white black-text-shadow">{tvshow.vote_average}</h3>
+                            </div>
+                            <img src={`https://image.tmdb.org/t/p/original${tvshow.poster_path}`} alt="" className="w-48 h-72 m-5 rounded-3xl hover:black-box-shadow " />
                         </div>
-                        <img src={`https://image.tmdb.org/t/p/original${tvshow.poster_path}`} alt="" className="rounded-3xl w-52 h-[20rem] aspect-video"/>
                         </div>
                     ))}
                 </article>

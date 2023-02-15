@@ -71,7 +71,7 @@ const DetailMoviesToSimilarMovies = () => {
                         <CrewDetails />
                     </div>
                     <div>
-                        <button className="bg-black w-80 h-14 rounded-2xl text-white flex justify-center items-center gap-x-1 mt-8"><BsListUl className="text-xl" />More watch options</button>
+                        <button className="bg-black w-80 h-14 rounded-2xl text-white flex justify-center items-center gap-x-1 mt-2"><BsListUl className="text-xl" />More watch options</button>
                     </div>
                     <div>
                         <CastDetail />
