@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import TextStyle from "./TextStyle";
 import { BsListUl } from "react-icons/bs";
 import { useState, useEffect } from "react";
+import ActorModal from "./ActorModal";
 
 
 const CrewDetails = () => {
@@ -18,7 +19,13 @@ const CrewDetails = () => {
 
     const {data: movie, loading, error} = useAxios(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=75f15351c6119a96302b866663e596b0&language=en-US`)
 
-  
+    const handleShowMember = (id) => {
+        setActorId(id)
+        setIsActorModalOpen(true)
+    }
+
+    const closeActorModal = () => setIsActorModalOpen(false)
+
 
     useEffect(() => {
         if (movie) {
@@ -57,13 +64,18 @@ const CrewDetails = () => {
                     </p>
                    ) : null}       
                 </div>
-                <div className=" border-b border-neutral-700 py-3">
+                <div className=" border-b border-neutral-700 py-3" onClick={() => {handleShowMember(member.id)}}>
                     <p className="text-neutral-200">Stars: {movie?.crew.map((member, index) => {if (index < 4) return (<span className="text-cyan-500">{member.name}, </span>)})} </p>
                 </div>
                 </div> 
             : null
             ))}
             </article>
+            <ActorModal 
+            isActorModalOpen={isActorModalOpen}
+            closeActorModal={closeActorModal}
+            actorId={actorId}
+            />
         </>
     );
 }
