@@ -24,6 +24,7 @@ import upcomingsequelscollage from "../components/upcomingsequelscollage.svg"
 import thenorthman from "../components/thenorthman.svg"
 import { Link } from "react-router-dom";
 import CastDetail from "../components/CastDetail";
+import Cast from "../components/Cast";
 
 
 
@@ -100,6 +101,9 @@ const DetailMovies = () => {
                     </div>
                     <div className="col-start-2">
                         <InfoBoxDetail img={thenorthman} headline={"Favourite"} textone={"updated 2 months ago"} texttwo={"48 images"} />
+                    </div>
+                    <div>
+                    <Cast id="287" />
                     </div>
                 </article>
             </article>

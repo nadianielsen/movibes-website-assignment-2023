@@ -10,6 +10,9 @@ const CrewDetails = () => {
     const [writers, setWriters] = useState();
     const [director, setDirector] = useState();
     const [members, setMembers] = useState();
+    const [actorId, setActorId] = useState();
+    const [isActorModalOpen, setIsActorModalOpen] = useState(false);
+
 
     const {id} = useParams()
 
