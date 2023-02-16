@@ -17,7 +17,7 @@ const Rating = () => {
             {movie && (
             <div className="flex gap-x-2">
                 <IoIosStar className="text-yellow-400 text-2xl" />
-                <TextStyle text={movie.vote_average}/>
+                <TextStyle text={movie.vote_average.toFixed(1)}/>
                 <p className="text-[#666666] ">| 350K</p>
             </div>
             )}

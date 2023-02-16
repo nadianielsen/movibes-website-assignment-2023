@@ -1,7 +1,6 @@
 import { Link, useParams } from "react-router-dom"
 import useAxios from "../customHooks/useAxios"
 import { MdArrowForwardIos } from "react-icons/md"
-import Cast from "./Cast"
 import ActorModal from "./ActorModal"
 import { useState } from "react"
 

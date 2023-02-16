@@ -64,8 +64,8 @@ const CrewDetails = () => {
                     </p>
                    ) : null}       
                 </div>
-                <div className=" border-b border-neutral-700 py-3" onClick={() => {handleShowMember(member.id)}}>
-                    <p className="text-neutral-200">Stars: {movie?.crew.map((member, index) => {if (index < 4) return (<span className="text-cyan-500">{member.name}, </span>)})} </p>
+                <div className=" border-b border-neutral-700 py-3" >
+                    <p className="text-neutral-200">Stars: {movie?.crew.map((member, index) => {if (index < 4) return (<span className="text-cyan-500" onClick={() => {handleShowMember(member.id)}}>{member.name}, </span>)})} </p>
                 </div>
                 </div> 
             : null
