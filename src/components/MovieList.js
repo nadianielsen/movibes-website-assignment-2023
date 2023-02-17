@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {IoIosStar} from "react-icons/io"
 
 
-const MovieList = ({headline, url}) => {
+const MovieList = ({headline, url, type}) => {
 
     const {data, loading, error} = useAxios(url)
 
@@ -19,7 +19,7 @@ const MovieList = ({headline, url}) => {
             {/* index tæller op til 19 og if statementen stopper den for at gå mere 4 ting, og derfor at vi bruger return er, fordi vi går ind i javascript/jsx med curlybrackets. */}
             {data?.results?.map((movie, index) => {
                if (index < 4 ) return (
-                <Link to={`/detailmovies/${movie.id}`} className="text-none">
+                <Link to={`/detailmovies/${type}/${movie.id}`} className="text-none">
                     <div className="hover:scale-110 transition-all">
                     <div className="relative">
                         <div className="bg-neutral-300 bg-opacity-20 w-20 h-7 rounded-tr-3xl rounded-bl-3xl ml-[6.99rem] flex justify-evenly backdrop-blur-sm absolute left-5">

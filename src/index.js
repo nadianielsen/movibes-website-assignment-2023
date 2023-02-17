@@ -26,8 +26,7 @@ const router = createBrowserRouter(
       <Route path='/movies' element={<Movies />}/>
       <Route path='/tvseries' element={<TVSeries />}/>
       <Route path='/upcoming' element={<Upcoming />}/>
-      <Route path='/detailmovies/:id' element={<DetailMovies />}/>
-      <Route path='/detailtvseries/:id' element={<DetailTvSeries />}/>
+      <Route path='/detailmovies/:type/:id' element={<DetailMovies />}/>
       <Route path='/detailmoviessimilarmovies/:id' element={<DetailMoviesToSimilarMovies />}/>
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<SignUp />} />

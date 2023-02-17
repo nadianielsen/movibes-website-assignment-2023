@@ -6,16 +6,11 @@ import { useState } from "react"
 
 
 
-const CastDetail = () => {
+const CastDetail = ({cast}) => {
 
     const [actorId, setActorId] = useState();
     const [isActorModalOpen, setIsActorModalOpen] = useState(false);
     
-
-    const { id } = useParams()
-
-    const { data: movie, loading, error } = useAxios(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=75f15351c6119a96302b866663e596b0&language=en-US`)
-
     const handleShowMember = (id) => {
         setActorId(id)
         setIsActorModalOpen(true)
@@ -39,9 +34,7 @@ const CastDetail = () => {
                     <h2 className="text-neutral-200 text-2xl flex gap-x-4">Top Cast<MdArrowForwardIos className="mt-1.5" /></h2>
                 </div>
                 <div className="grid grid-cols-4 mt-6 gap-16">
-                    {loading && <p>Loading...</p>}
-                    {error && <p>{error}</p>}
-                    {movie?.cast?.map((actor, index) => {
+                    {cast?.map((actor, index) => {
                         if (index < 4) return (
                             <div className="justify-self-center">
                                 <div className="w-36 h-36 rounded-full relative" onClick={() => {handleShowMember(actor.id)}}>

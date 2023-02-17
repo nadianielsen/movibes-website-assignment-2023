@@ -1,11 +1,11 @@
-import useAxios from "../customHooks/useAxios";
 import { Link } from "react-router-dom";
 import { IoIosStar } from "react-icons/io"
 
 
-const MovieListSimilarMovies = ({ headline, url }) => {
+const MovieListSimilarMovies = ({ headline, similarmovies}) => {
 
-    const { data, loading, error } = useAxios(url)
+
+    console.log(similarmovies)
 
     return (
         <article className="mt-6">
@@ -14,10 +14,8 @@ const MovieListSimilarMovies = ({ headline, url }) => {
                 <Link to={"/seeall"} className="text-neutral-600 pt-7 font-semibold font-['Poppins']">See all</Link>
             </article>
             <article className="flex">
-                {error && <p>{error}</p>}
-                {loading && <p>Loading...</p>}
                 {/* index tæller op til 19 og if statementen stopper den for at gå mere 4 ting, og derfor at vi bruger return er, fordi vi går ind i javascript/jsx med curlybrackets. */}
-                {data?.results?.map((movie, index) => {
+                {similarmovies?.results?.map((movie, index) => {
                     if (index < 4) return (
                         <Link to={`/detailmoviessimilarmovies/${movie.id}`} className="text-none">
                             <div className="hover:scale-110 transition-all">

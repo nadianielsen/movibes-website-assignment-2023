@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import ActorModal from "./ActorModal";
 
 
-const CrewDetails = () => {
+const CrewDetails = ({crew}) => {
 
     const [writers, setWriters] = useState();
     const [director, setDirector] = useState();
@@ -14,10 +14,7 @@ const CrewDetails = () => {
     const [actorId, setActorId] = useState();
     const [isActorModalOpen, setIsActorModalOpen] = useState(false);
 
-
-    const {id} = useParams()
-
-    const {data: movie, loading, error} = useAxios(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=75f15351c6119a96302b866663e596b0&language=en-US`)
+    console.log(crew)
 
     const handleShowMember = (id) => {
         setActorId(id)
@@ -28,27 +25,25 @@ const CrewDetails = () => {
 
 
     useEffect(() => {
-        if (movie) {
-            setDirector(movie.crew.find(
+        if (crew) {
+            setDirector(crew.find(
                 (member) => member.job.toLowerCase().includes("director") 
             ))
 
-            setWriters(movie.crew.filter(
+            setWriters(crew.filter(
                 (member) => member.job.toLowerCase().includes("writer")
             ))
         }
 
-    }, [movie]);
+    }, [crew]);
 
     // writers && console.log(writers)
 
     return (
         <>
         <article className="w-[75rem] gap-x-4">
-        {error && <p>{error}</p>}
-        {loading && <p>Loading...</p>}
 {/* optional chaining = movie? - ? - optional chaining */}
-        {movie?.crew.map((member, index) => (
+        {crew?.map((member, index) => (
             index < 1 ?
                 <div className="w-[55rem]">
                 <div className="border-y border-neutral-700 py-3">
@@ -65,7 +60,7 @@ const CrewDetails = () => {
                    ) : null}       
                 </div>
                 <div className=" border-b border-neutral-700 py-3" >
-                    <p className="text-neutral-200">Stars: {movie?.crew.map((member, index) => {if (index < 4) return (<span className="text-cyan-500" onClick={() => {handleShowMember(member.id)}}>{member.name}, </span>)})} </p>
+                    <p className="text-neutral-200">Stars: {crew?.map((member, index) => {if (index < 4) return (<span className="text-cyan-500" onClick={() => {handleShowMember(member.id)}}>{member.name}, </span>)})} </p>
                 </div>
                 </div> 
             : null
