@@ -29,7 +29,7 @@ const CastDetail = () => {
         <>
             <article className="mt-6 grid grid-cols-2">
                 <article className="w-[55rem] bg-black rounded-2xl h-14 flex justify-between">
-                    <button className="bg-cyan-400 text-neutral-200 w-64 h-14 rounded-2xl">Top Rated Movie #</button>
+                    <div className="bg-cyan-400 text-neutral-200 w-64 h-14 rounded-2xl flex justify-center items-center ">Top Rated Movie #</div>
                     <p className="text-white m-auto">Awards</p>
                     <select name="awards" id="awards" className="text-white bg-transparent mr-10"></select>
                 </article>

@@ -34,27 +34,27 @@ const ActorModal = ({ isActorModalOpen, closeActorModal, actorId }) => {
 
   useEffect(() => {
     axios(`https://api.themoviedb.org/3/person/${actorId}?api_key=75f15351c6119a96302b866663e596b0&language=en-US`)
-      .then((response) => {
-        setPerson(response.data)
-        setError(null)
-      })
-      .catch(() => {
-        setError("Something went wrong")
-        console.log("An error has occurred")
-      })
+      .then((response) => setPerson(response.data))
       .finally(() => {
         setLoading(false)
       })
+// nulstiller statet som er en cleanup
+// bruger det til at man kan se i milisekunder at hvis man skifter fra person til person, så kan man stadig nå at se den anden person man var på før.
+      
   }, [actorId])
+
+  const handleCloseRequest = () => {
+    setPerson(null);
+    closeActorModal();
+  }
 
   return (
 
 
-    <Modal isOpen={isActorModalOpen} onRequestClose={closeActorModal} style={customStyles} contentLabel="Example Modal">
+    <Modal isOpen={isActorModalOpen} onRequestClose={handleCloseRequest} style={customStyles} contentLabel="Example Modal">
       <button onClick={closeActorModal}><VscChromeClose className="text-white text-3xl hover:text-cyan-400 transition" /></button>
       <div className=" w-[60vw] h-[70vh]">
         {loading && <p>Loading...</p>}
-        {error && <p>{error}</p>}
         {person && (
           <>
             <div className='flex gap-x-4'>
@@ -66,7 +66,7 @@ const ActorModal = ({ isActorModalOpen, closeActorModal, actorId }) => {
                 <h2 className='text-neutral-200 pt-2 font-semibold'>{person.name}</h2>
                 <p className='text-neutral-200 pt-2'>Born: {person.birthday}</p>
                 <p className='text-neutral-200 pt-2'>Job/Department: {person.known_for_department}</p>
-                <p className='text-neutral-200 pt-2 gap-x-1 flex'><IoIosStar className="text-yellow-400 text-xl" />{person.popularity.toFixed(1)}/10</p>
+                <p className='text-neutral-200 pt-2 gap-x-1 flex'><IoIosStar className="text-yellow-400 text-xl" />{person.popularity.toFixed(1)}%/100</p>
                 {person.deathday ? (
                   <p className='text-neutral-200 pt-2'>Decease: {person.deathday}</p>
                 ) : null}
