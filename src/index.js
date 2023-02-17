@@ -34,7 +34,9 @@ const router = createBrowserRouter(
       <Route path='/seeall' element={<SeeAll />} />
       <Route path='/trailer/:id' element={<TrailerSite />} />
       <Route path='/search' element={<Search />} />
+
     </Route>
+    
   )
 )
 

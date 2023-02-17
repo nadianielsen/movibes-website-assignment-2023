@@ -5,7 +5,7 @@ import { FiHeart, FiShare2 } from "react-icons/fi"
 import { BsBookmark, BsListUl } from "react-icons/bs"
 import MovieTitleDetail from "../components/MovieTitleDetail";
 import ReleaseDate from "../components/ReleaseDate";
-import MovieLength from "../components/MovieLength";
+import MovieLength from "../components/Runtime";
 import Rating from "../components/Rating";
 import BannerDetails from "../components/BannerDetails";
 import MovieDescription from "../components/MovieDescription";

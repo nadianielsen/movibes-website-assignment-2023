@@ -5,7 +5,7 @@ import { FiHeart, FiShare2 } from "react-icons/fi"
 import { BsBookmark, BsListUl } from "react-icons/bs"
 import MovieTitleDetail from "../components/MovieTitleDetail";
 import ReleaseDate from "../components/ReleaseDate";
-import MovieLength from "../components/MovieLength";
+import MovieLength from "../components/Runtime";
 import Rating from "../components/Rating";
 import BannerDetails from "../components/BannerDetails";
 import MovieDescription from "../components/MovieDescription";
@@ -26,6 +26,8 @@ import { Link } from "react-router-dom";
 import CastDetail from "../components/CastDetail";
 import useAxios from "../customHooks/useAxios";
 import { useParams } from "react-router-dom";
+import Seasons from "../components/Seasons";
+import Runtime from "../components/Runtime";
 
 
 const DetailMovies = () => {
@@ -36,9 +38,9 @@ const DetailMovies = () => {
 
     const month = date.getMonth()
 
-    const {id, type} = useParams();
+    const { id, type } = useParams();
 
-    const {data, error, loading } = useAxios(`https://api.themoviedb.org/3/${type}/${id}?api_key=75f15351c6119a96302b866663e596b0&append_to_response=videos,images,credits,similar`)
+    const { data, error, loading } = useAxios(`https://api.themoviedb.org/3/${type}/${id}?api_key=75f15351c6119a96302b866663e596b0&append_to_response=videos,images,credits,similar`)
     console.log(data)
 
     return (
@@ -48,39 +50,39 @@ const DetailMovies = () => {
                     <SearchForm />
                     <NotificationProfileSection />
                 </div>
-                <BannerDetails id={data?.id} backdrop_path={data?.backdrop_path}/>
+                <BannerDetails id={data?.id} backdrop_path={data?.backdrop_path} />
                 <article className="grid grid-cols-3 grid-rows-1 w-[75rem] m-6">
                     <div className="col-span-2 self-center">
                         <div className="flex gap-x-3">
-                            <MovieTitleDetail title={type === "movie" ? data?.title : data?.name}/>
-                            <ReleaseDate release_date={type === "movie" ? data?.release_date.slice(0, 4) : data?.first_air_date.slice(0, 4)}/>
+                            <MovieTitleDetail title={type === "movie" ? data?.title : data?.name} />
+                            <ReleaseDate release_date={type === "movie" ? data?.release_date.slice(0, 4) : data?.first_air_date.slice(0, 4)} />
                             <TextStyle text="PG-13" />
-                            <MovieLength />
-                            <GenreBox genres={data?.genres}/>
+                            {type === "movie" ? <Runtime runtime={data?.runtime} /> : <Seasons number_of_seasons={data?.number_of_seasons} />}
+                            <GenreBox genres={data?.genres} />
                         </div>
                     </div>
                     <div className="flex col-start-3 col-end-3 gap-x-7 m-auto mr-2">
                         <FiHeart className="text-neutral-300 text-2xl" />
                         <FiShare2 className="text-neutral-300 text-2xl" />
                         <BsBookmark className="text-neutral-300 text-2xl" />
-                        <Rating vote_average={data?.vote_average}/>
+                        <Rating vote_average={data?.vote_average} />
                     </div>
                 </article>
                 <article className="grid-columns gap-x-4 mt-6 ml-6">
                     <div>
-                        <MovieDescription overview={data?.overview}/>
+                        <MovieDescription overview={data?.overview} />
                     </div>
                     <div>
                         <button className="bg-cyan-400 w-80 h-14 text-neutral-200 rounded-xl flex justify-center items-center"><img src={buttontickets} alt="" />See Showtimes</button>
                     </div>
                     <div>
-                        <CrewDetails crew={data?.credits?.crew}/>
+                        <CrewDetails crew={data?.credits?.crew} />
                     </div>
                     <div>
                         <button className="bg-black w-80 h-14 rounded-2xl text-white flex justify-center items-center gap-x-1 mt-8"><BsListUl className="text-xl" />More watch options</button>
                     </div>
                     <div>
-                        <CastDetail cast={data?.credits?.cast}/>
+                        <CastDetail cast={data?.credits?.cast} />
                     </div>
                     <div>
                         <MovieBoxDetailSite img={moviecollage} />
@@ -91,7 +93,7 @@ const DetailMovies = () => {
                         <InfoBoxDetail img={topgunimage} headline={"2022 Summer Movie Guide"} textone={"updated 1 month ago"} texttwo={"52 images"} />
                     </div>
                     <div className="">
-                        <SimilarMovies similarmovies={data?.similar}/>
+                        <SimilarMovies similarmovies={data?.similar} />
                     </div>
                     <div>
                         <InfoBoxDetail img={actionimage} headline={"Upcoming Action and Adventure Movies and TV"} textone={"updated 3 months ago"} texttwo={"26 images"} />
