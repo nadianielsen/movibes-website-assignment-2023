@@ -16,7 +16,7 @@ import TrailerSite from './pages/TrailerSite';
 import AllMoviesPage from './pages/AllMoviesPage';
 import Search from './pages/Search';
 import DetailMoviesToSimilarMovies from './pages/DetailMoviesToSimilarMovies';
-import DetailTvSeries from './pages/DetailTvSeries';
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
